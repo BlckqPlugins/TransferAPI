@@ -45,9 +45,8 @@ class SendToCommand extends Command {
 			$player = null;
 
 			if (!isset($args[0])){
-				$player = $sender;
-			} else {
-				$player = Server::getInstance()->getPlayerExact($args[0]);
+				$sender->sendMessage("§cPlease enter a valid player name.");
+                                return false;
 			}
 
 			if (!isset($args[1]) or !is_string($args[1])){
