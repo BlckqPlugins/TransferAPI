@@ -59,6 +59,7 @@ class SendToCommand extends Command {
 				return false;
 			}
 
+                        $player = Server::getInstance()->getPlayerExact($args[0]);
 			if ($player instanceof Player){
 				TransferAPI::transferPlayer($player, $args[1], $args[2]);
 			}
