@@ -20,7 +20,8 @@ class Main extends PluginBase {
 	 * Function onEnable
 	 * @return void
 	 */
-	public function onEnable(){
+	public function onEnable():void
+    {
 		Server::getInstance()->getCommandMap()->register("sendto", new SendToCommand());
 		Server::getInstance()->getLogger()->info("§aenabled.");
 	}
