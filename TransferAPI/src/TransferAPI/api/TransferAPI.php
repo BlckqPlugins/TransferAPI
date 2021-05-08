@@ -4,7 +4,7 @@
 namespace TransferAPI\api;
 
 use pocketmine\network\mcpe\protocol\TransferPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 
 
@@ -39,7 +39,7 @@ class TransferAPI {
 		$pk = new TransferPacket();
 		$pk->address = $servername; //The server name you specified in the WaterDogPE config.
 		$pk->port = $port; //The server port you specified in the WaterDogPE config.
-		$player->sendDataPacket($pk);
+		$player->getNetworkSession()->sendDataPacket($pk);
 		Server::getInstance()->getLogger()->info($player->getName() . "§c will teleported to Server §e{$servername} §c with Port §e{$port}§8.");
 	}
 
