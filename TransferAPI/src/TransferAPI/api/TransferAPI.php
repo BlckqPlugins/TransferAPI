@@ -24,7 +24,7 @@ class TransferAPI {
 	 * @param int $port
 	 * @return void
 	 */
-	public static function transferPlayer(Player $player, string $servername, int $port){
+	public static function transferPlayer(Player $player, string $servername, int $port=0){
 
 		if (is_null($servername) or !is_string($servername)){
 			Server::getInstance()->getLogger()->alert("§4Please insert an valid Server name.");
