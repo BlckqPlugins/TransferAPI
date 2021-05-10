@@ -3,5 +3,5 @@ branches:
 - main
 projects:
   TransferAPI:
-    path: ""
+    path: "TransferAPI/"
 ...
