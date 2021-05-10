@@ -51,6 +51,7 @@ class SendToCommand extends Command {
             $player = $sender->getName();
         } else {
             $player = $args[0];
+        }
 
         if (!isset($args[1]) or !is_string($args[1])) {
             $sender->sendMessage("§cPlease enter a valid server name.");
@@ -62,6 +63,7 @@ class SendToCommand extends Command {
             $port = 0;
         } else {
             $port = $args[2];
+        }
 
         $transferPlayer = Server::getInstance()->getPlayerExact($player);
         if ($transferPlayer instanceof Player) {
