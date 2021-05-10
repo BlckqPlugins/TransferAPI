@@ -7,6 +7,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\utils\TextFormat;
 use TransferAPI\api\TransferAPI;
 
 
@@ -22,7 +23,7 @@ class SendToCommand extends Command {
 	 * SendToCommand constructor.
 	 */
 	public function __construct(){
-		parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port>", ["transferto"]);
+		parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port (optional)>", ["transferto"]);
 		$this->setPermission("transferapi.sendto");
 	}
 
@@ -52,11 +53,11 @@ class SendToCommand extends Command {
         }
 
         if (!isset($args[1]) or !is_string($args[1])) {
-            $sender->sendMessage("§cPlease enter a valid server name.");
+            $sender->sendMessage(TextFormat::RED . $this->getUsage());
             return false;
         }
 
-        if (!isset($args[2]) or !is_numeric($args[2])) {
+        if (is_null($args[2]) or !is_numeric($args[2])) {
             $sender->sendMessage("§cPlease enter a valid port.");
             return false;
         }
