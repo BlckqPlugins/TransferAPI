@@ -7,7 +7,6 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\Server;
-use pocketmine\utils\TextFormat;
 use TransferAPI\api\TransferAPI;
 
 
@@ -19,22 +18,22 @@ use TransferAPI\api\TransferAPI;
  * @project TransferAPI
  */
 class SendToCommand extends Command {
-	/**
-	 * SendToCommand constructor.
-	 */
-	public function __construct(){
-		parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port (optional)>", ["transferto"]);
-		$this->setPermission("transferapi.sendto");
-	}
+    /**
+     * SendToCommand constructor.
+     */
+    public function __construct(){
+        parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port (Default: 0)>", ["transferto"]);
+        $this->setPermission("transferapi.sendto");
+    }
 
-	/**
-	 * Function execute
-	 * @param CommandSender $sender
-	 * @param string $commandLabel
-	 * @param array $args
-	 * @return mixed|void
-	 */
-	public function execute(CommandSender $sender, string $commandLabel, array $args): bool
+    /**
+     * Function execute
+     * @param CommandSender $sender
+     * @param string $commandLabel
+     * @param array $args
+     * @return mixed|void
+     */
+    public function execute(CommandSender $sender, string $commandLabel, array $args): bool
     {
 
         if (!$this->testPermission($sender)) {
@@ -50,16 +49,20 @@ class SendToCommand extends Command {
         $player = null;
         if (!isset($args[0])) {
             $player = $sender->getName();
+        } else {
+            $player = $args[0];
         }
 
         if (!isset($args[1]) or !is_string($args[1])) {
-            $sender->sendMessage(TextFormat::RED . $this->getUsage());
+            $sender->sendMessage("§cPlease enter a valid server name.");
             return false;
         }
 
-        if (is_null($args[2]) or !is_numeric($args[2])) {
-            $sender->sendMessage("§cPlease enter a valid port.");
-            return false;
+        $port = null;
+        if (!isset($args[2]) or !is_numeric($args[2])) {
+            $port = 0;
+        } else {
+            $port = $args[2];
         }
 
         $transferPlayer = Server::getInstance()->getPlayerExact($player);
