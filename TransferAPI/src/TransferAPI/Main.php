@@ -5,6 +5,7 @@ namespace TransferAPI;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
+use pocketmine\utils\TextFormat;
 use TransferAPI\Commands\SendToCommand;
 
 
@@ -23,6 +24,6 @@ class Main extends PluginBase {
 	public function onEnable():void
     {
 		Server::getInstance()->getCommandMap()->register("sendto", new SendToCommand());
-		Server::getInstance()->getLogger()->info("§aenabled.");
+		//Server::getInstance()->getLogger()->info(TextFormat::GREEN . "Enabled!");
 	}
 }
