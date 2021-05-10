@@ -1,6 +1,6 @@
 # TransferAPI
 TransferAPI for WaterdogPE. Written in PHP. ( **NOT TESTED** )
-This Plugin is only for PM4. PM3 Support has dropped.
+This Plugin is only for PM4. <a href="https://github.com/BlckqPlugins/TransferAPI/tree/PM3">PM3 Support</a>
 
 Commands:
   - /sendto <Player> <Servername> <Server-Port>
