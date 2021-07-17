@@ -7,7 +7,6 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use TransferAPI\Commands\SendToCommand;
 
-
 /**
  * Class Main
  * @package TransferAPI

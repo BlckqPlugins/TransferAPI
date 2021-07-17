@@ -3,7 +3,7 @@ api: ["4.0.0"]
 version: "1.0.0"
 description: "Public TransferAPI for WaterdogPE for PocketMine Server"
 main: TransferAPI\Main
-author: "StimoMC-Development"
+author: "BlckqPlugins"
 
 permissions:
   transferapi.sendto:

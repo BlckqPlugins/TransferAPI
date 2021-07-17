@@ -22,7 +22,7 @@ class SendToCommand extends Command {
 	 * SendToCommand constructor.
 	 */
 	public function __construct(){
-		parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port (Default: 0)>", ["transferto"]);
+		parent::__construct("sendto", "SendTo Command", "/sendto <Player (default: Your Playername)> <Server> <Port>", ["transferto"]);
 		$this->setPermission("transferapi.sendto");
 	}
 
@@ -58,11 +58,9 @@ class SendToCommand extends Command {
             return false;
         }
 
-        $port = null;
         if (!isset($args[2]) or !is_numeric($args[2])) {
-            $port = 0;
-        } else {
-            $port = $args[2];
+            $sender->sendMessage("§cPlease enter a valid port.");
+            return false;
         }
 
         $transferPlayer = Server::getInstance()->getPlayerExact($player);
