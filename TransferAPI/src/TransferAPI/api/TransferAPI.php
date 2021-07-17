@@ -4,7 +4,7 @@
 namespace TransferAPI\api;
 
 use pocketmine\network\mcpe\protocol\TransferPacket;
-use pocketmine\player\Player;
+use pocketmine\Player;
 use pocketmine\Server;
 
 
