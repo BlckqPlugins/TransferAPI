@@ -9,3 +9,7 @@ Commands:
  ```php
  $api = new \TransferAPI\api\TransferAPI();
  $api::transferPlayer($player, "ServerName");
+  
+ or
+  
+ /sendto <Player (Default your name)> <Server-Name> 
