@@ -7,9 +7,10 @@ Commands:
 
  # Usage(example)
  ```php
- $api = new \TransferAPI\api\TransferAPI();
- $api::transferPlayer($player, "ServerName");
+ (to transfer a player via plugin) 
+ new \TransferAPI\api\TransferAPI::transferPlayer($player, "ServerName");
   
  or
   
+ (to transfer a player via command)
  /sendto <Player (Default your name)> <Server-Name> 
