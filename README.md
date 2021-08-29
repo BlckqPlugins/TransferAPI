@@ -8,4 +8,4 @@ Commands:
  # Usage(example)
  ```php
  $api = new \TransferAPI\api\TransferAPI();
- $api::transferPlayer($player, "ServerName", 19132);
+ $api::transferPlayer($player, "ServerName");
