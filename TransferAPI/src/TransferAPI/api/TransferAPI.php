@@ -30,11 +30,6 @@ class TransferAPI {
 			return;
 		}
 
-		if (is_null($port) or !is_numeric($port)){
-			Server::getInstance()->getLogger()->alert("§4Please insert an valid Port.");
-			return;
-		}
-
 		$pk = new TransferPacket();
 		$pk->address = $servername; //The server name you specified in the WaterDogPE config.
 		$pk->port = 0;
