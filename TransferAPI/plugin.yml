@@ -1,5 +1,5 @@
 name: "TransferAPI"
-api: ["4.0.0"]
+api: ["4.0.0", "5.0.0"]
 version: "1.0.0"
 description: "Public TransferAPI for WaterdogPE for PocketMine Server"
 main: TransferAPI\Main

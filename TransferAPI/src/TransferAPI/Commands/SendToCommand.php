@@ -41,11 +41,6 @@ class SendToCommand extends Command {
             return false;
         }
 
-        if (!$sender instanceof Player){
-            Server::getInstance()->getLogger()->info("You must be a player to execute this command.");
-            return false;
-        }
-
         $player = null;
         if (!isset($args[0])) {
             $player = $sender->getName();
