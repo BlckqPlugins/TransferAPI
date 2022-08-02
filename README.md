@@ -1,9 +1,8 @@
 # TransferAPI
-TransferAPI for WaterdogPE. Written in PHP. ( **NOT TESTED** )
-This Plugin is only for PM4. <a href="https://github.com/BlckqPlugins/TransferAPI/tree/PM3">PM3 Support</a>
+TransferAPI for WaterdogPE. Written in PHP.
 
 Commands:
-  - /sendto <Player> <Servername> <Server-Port>
+  - /sendto <Servername> <Player>
 
  # Usage(example)
  ```php
@@ -13,4 +12,4 @@ Commands:
  or
   
  (to transfer a player via command)
- /sendto <Player (Default your name)> <Server-Name> 
+ /sendto <Server-Name> <Player (Default your name)> 
