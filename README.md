@@ -3,6 +3,9 @@ TransferAPI for WaterdogPE. Written in PHP.
 
 Commands:
   - /sendto <Servername> <Player>
+  
+Permissions:
+  - transferapi.sendto
 
  # Usage(example)
  ```php
