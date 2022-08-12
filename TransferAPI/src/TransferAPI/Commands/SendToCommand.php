@@ -56,6 +56,8 @@ class SendToCommand extends Command {
         $transferPlayer = Server::getInstance()->getPlayerExact($player);
         if ($transferPlayer instanceof Player) {
             TransferAPI::transferPlayer($transferPlayer, $args[1]);
+        } else {
+            $sender->sendMessage("§cThe player §e{$player} is not online.");
         }
         return false;
     }
