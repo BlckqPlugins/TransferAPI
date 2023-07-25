@@ -5,6 +5,7 @@ namespace TransferAPI\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\console\ConsoleCommandSender;
 use pocketmine\player\Player;
 use pocketmine\Server;
 use TransferAPI\api\TransferAPI;
@@ -46,6 +47,13 @@ class SendToCommand extends Command {
             return false;
         }
 
+        if ($sender instanceof ConsoleCommandSender){
+            if (!isset($args[1])){
+                $sender->sendMessage("§cYou must specify a player name.");
+                return false;
+            }
+        }
+
         if (!isset($args[1])) {
             $player = $sender->getName();
         } else {
@@ -54,7 +62,7 @@ class SendToCommand extends Command {
 
         $transferPlayer = Server::getInstance()->getPlayerExact($player);
         if ($transferPlayer instanceof Player) {
-            TransferAPI::transferPlayer($transferPlayer, $args[1]);
+            TransferAPI::transferPlayer($transferPlayer, $args[0]);
         } else {
             $sender->sendMessage("§cThe player §e{$player} is not online.");
         }
