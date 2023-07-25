@@ -22,6 +22,5 @@ class Main extends PluginBase {
 	public function onEnable():void
     {
 		Server::getInstance()->getCommandMap()->register("sendto", new SendToCommand());
-		Server::getInstance()->getLogger()->info("§aenabled.");
 	}
 }

@@ -26,13 +26,13 @@ class SendToCommand extends Command {
 		$this->setPermission("transferapi.sendto");
 	}
 
-	/**
-	 * Function execute
-	 * @param CommandSender $sender
-	 * @param string $commandLabel
-	 * @param array $args
-	 * @return mixed|void
-	 */
+    /**
+     * Function execute
+     * @param CommandSender $sender
+     * @param string $commandLabel
+     * @param array $args
+     * @return bool
+     */
 	public function execute(CommandSender $sender, string $commandLabel, array $args): bool
     {
 
@@ -46,7 +46,6 @@ class SendToCommand extends Command {
             return false;
         }
 
-        $player = null;
         if (!isset($args[1])) {
             $player = $sender->getName();
         } else {

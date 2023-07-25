@@ -23,14 +23,9 @@ class TransferAPI {
      * @param string $servername
      * @return void
      */
-	public static function transferPlayer(Player $player, string $servername){
-
-		if (!is_string($servername)){
-			Server::getInstance()->getLogger()->alert("§4Please insert an valid Server name.");
-			return;
-		}
-
-		$pk = new TransferPacket();
+	public static function transferPlayer(Player $player, string $servername): void
+    {
+        $pk = new TransferPacket();
 		$pk->address = $servername; //The server name you specified in the WaterDogPE config.
 		$pk->port = 0;
 		$player->getNetworkSession()->sendDataPacket($pk);
